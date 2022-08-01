@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Quantico:wght@400;700&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Quantico:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/common.css" />
     <title>Document</title>
   </head>
@@ -15,36 +18,75 @@
     <section class="section">
       <h1 class="title">Mortgage</h1>
       <ul class="fields">
-        <li class="fields__item">
-        <h2 class="subtitle">Bank`s list</h2>
-        <ul class="banks"></ul>
-        <button class="button" type="button">Create new bank</button>
-      </li>
-      <li class="fields__item">
-        <h2 class="subtitle">Loan Information</h2>
-        <ul class="features">
-          <li class="features__item">
-            <p class="features__name">Bank:</p>
-            <span class="features__value">0</span>
-          </li>
-          <li class="features__item">
-            <p class="features__name">Mortgage size, $:</p>
-            <span class="features__value">0</span>
-          </li>
-          <li class="features__item">
-            <p class="features__name">Minimum down payment, $:</p>
-            <span class="features__value">0</span>
-          </li>
-          <li class="features__item">
-            <p class="features__name">Loan period, month:</p>
-            <span class="features__value">0</span>
-          </li>
-          <li class="features__item">
-            <p class="features__name">Interest rate, %:</p>
-            <span class="features__value">0</span>
-          </li>
-      </li>
+        <li class="fields__item" data-banks="list-field">
+          <!-- <h2 class="subtitle">Bank`s list</h2>
+          <ul class="banks">
+            <li class="banks__item">
+              <p>1. Mono</p>
+              <button type="button" class="button-edit"></button>
+              <button type="button" class="button-close"></button>
+            </li>
+          </ul>
+          <button class="button" type="button">Create new bank</button> -->
+        </li>
+
+        <li class="fields__item" data-banks="info-field">
+          <!-- <h2 class="subtitle">Loan Information</h2>
+          <ul class="features">
+            <li class="features__item">
+              <p class="features__name">Bank:</p>
+              <span class="features__value">0</span>
+            </li>
+            <li class="features__item">
+              <p class="features__name">Mortgage size, $:</p>
+              <span class="features__value">0</span>
+            </li>
+            <li class="features__item">
+              <p class="features__name">Minimum down payment, $:</p>
+              <span class="features__value">0</span>
+            </li>
+            <li class="features__item">
+              <p class="features__name">Loan period, month:</p>
+              <span class="features__value">0</span>
+            </li>
+            <li class="features__item">
+              <p class="features__name">Interest rate, %:</p>
+              <span class="features__value">0</span>
+            </li>
+          </ul> -->
+        </li>
       </ul>
+    </section>
+
+    <section class="section form-section">
+      <h2 class="subtitle">Fill the form</h2>
+      <form name="new-bank-info" novalidate>
+        <label>
+          Bank name
+          <input type="text" name="name" />
+        </label>
+        <label>
+          Interest rate, %
+          <input type="text" name="interestRate" />
+        </label>
+        <label>
+          Loan period, month
+          <input type="text" name="loanTerm" />
+        </label>
+        <label>
+          Mortgage size, $
+          <input type="text" name="maxLoan" />
+        </label>
+        <label>
+          Minimum down payment, $
+          <input type="text" name="minPayment" />
+        </label>
+      </form>
+      <div class="button-wrapper">
+        <button type="submit" id="submit-btn" class="button">Add</button>
+        <button type="reset" id="reset-btn" class="button">Clear</button>
+        <!-- <button type="submit" class="button">Cancel</button> -->
+      </div>
     </section>
 
     <script src="./js/script.js" type="module"></script>

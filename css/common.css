@@ -5,11 +5,13 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   font-family: 'Caveat Brush', cursive;
   font-family: 'Quantico', sans-serif;
+  font-size: 20px;
   background-color: var(--accent-color);
 }
 
@@ -34,14 +36,15 @@ p {
 /* Variables */
 
 :root {
-  --accent-color: #880061;
-  --second-accent-color: #ee0290;
+  --accent-color: rgba(0, 113, 99, 1);
+  --second-accent-color: rgba(0, 113, 99, 0.1);
+  --main-background-color: rgba(255, 255, 255, 1);
 }
 
 /* Section */
 
 .section {
-  background-color: white;
+  background-color: var(--main-background-color);
 
   padding: 25px 30px;
 
@@ -49,6 +52,30 @@ p {
   min-height: 200px;
 
   border-radius: 8px;
+
+  margin-bottom: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 5px;
+  font-family: inherit;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .fields {
@@ -68,22 +95,74 @@ p {
   align-items: center;
 }
 
-.button {
-  margin: 0 auto;
+.subtitle {
+  margin-bottom: 10px;
+}
 
-  background-color: var(--accent-color);
+.banks {
+  width: 100%;
+
+  margin-bottom: 10px;
+}
+
+.banks__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 5px 10px;
+  margin-bottom: 5px;
+
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+
+  /* background-color: var(--accent-color); */
+}
+
+.banks__item:last-child {
+  margin-bottom: 0px;
+}
+
+.button {
+  color: var(--accent-color);
+  margin: 0 auto;
+  padding: 5px;
+
+  background: var(--second-accent-color);
   font-family: inherit;
 
-  border: 1px black solid;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  border: 1px solid #007163;
+  border-radius: 5px;
 
   cursor: pointer;
 }
 
 .button:hover,
 .button:focus {
-  background-color: var(--second-accent-color);
+  color: var(--main-background-color);
+  background-color: var(--accent-color);
+}
+
+.button-edit {
+  margin-left: auto;
+  margin-right: 10px;
+  background-image: url(../img/edit-button.svg);
+  background-position: center;
+  background-color: inherit;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.button-close {
+  background-image: url(../img/close-button.svg);
+  background-position: center;
+  background-color: inherit;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
 }
 
 .features {
